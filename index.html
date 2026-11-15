@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard demonstrativo de indicadores operacionais com dados fictícios.">
+  <title>Dashboard Operacional | Visão geral</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar">
+    <div class="container topbar-content">
+      <a class="brand" href="index.html" aria-label="Dashboard Operacional — início">
+        <span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>operacional<span class="brand-dot">.</span></span>
+      </a>
+      <span class="demo-badge"><span aria-hidden="true"></span> Ambiente demonstrativo</span>
+    </div>
+  </header>
+
+  <main class="container" id="conteudo">
+    <section class="page-heading" aria-labelledby="titulo-pagina">
+      <div>
+        <p class="eyebrow">PAINEL DE INDICADORES</p>
+        <h1 id="titulo-pagina">Visão geral da operação</h1>
+        <p class="muted">Acompanhe o volume de casos e o cumprimento dos prazos.</p>
+      </div>
+      <div class="period"><span aria-hidden="true">◷</span><span id="periodo"></span></div>
+    </section>
+
+    <section class="filter-panel" aria-label="Filtros do painel">
+      <div>
+        <label for="empresa">Empresa</label>
+        <select id="empresa" name="empresa"></select>
+      </div>
+      <p id="resumo-filtro" class="muted" role="status" aria-live="polite" aria-atomic="true"></p>
+      <button class="reset-button" type="button" id="limpar-filtro" disabled>Limpar filtro <span aria-hidden="true">↺</span></button>
+    </section>
+
+    <section class="metrics" aria-label="Indicadores operacionais">
+      <article class="metric-card">
+        <div class="metric-heading"><h2>Total de casos</h2><span class="metric-icon" aria-hidden="true">▦</span></div>
+        <p class="metric-value" id="total-casos">—</p>
+        <p class="metric-note">Casos registrados no período</p>
+      </article>
+      <article class="metric-card">
+        <div class="metric-heading"><h2>Casos abertos</h2><span class="metric-icon amber" aria-hidden="true">◷</span></div>
+        <p class="metric-value" id="casos-abertos">—</p>
+        <p class="metric-note"><span class="dot amber-dot"></span>Aguardando conclusão</p>
+      </article>
+      <article class="metric-card">
+        <div class="metric-heading"><h2>Casos fechados</h2><span class="metric-icon green" aria-hidden="true">✓</span></div>
+        <p class="metric-value" id="casos-fechados">—</p>
+        <p class="metric-note"><span class="dot green-dot"></span>Atendimentos concluídos</p>
+      </article>
+      <article class="metric-card sla-card">
+        <div class="metric-heading"><h2>SLA de atendimento</h2><span class="metric-icon purple" aria-hidden="true">◎</span></div>
+        <p class="metric-value" id="sla">—</p>
+        <p class="metric-note">Casos fechados dentro do prazo</p>
+      </article>
+    </section>
+
+    <section class="panel chart-panel" aria-labelledby="titulo-grafico">
+      <div class="panel-heading">
+        <div><h2 id="titulo-grafico">Casos por mês</h2><p class="muted">Distribuição dos casos por mês de registro</p></div>
+        <div class="legend" aria-label="Legenda do gráfico">
+          <span><i class="dot amber-dot"></i>Abertos</span>
+          <span><i class="dot green-dot"></i>Fechados</span>
+        </div>
+      </div>
+      <div class="chart-scroll">
+        <div class="chart-layout">
+          <div class="chart-axis" id="eixo-grafico" aria-hidden="true"></div>
+          <div class="chart-plot">
+            <ol class="chart-bars" id="barras-grafico" aria-label="Quantidade mensal de casos abertos e fechados"></ol>
+          </div>
+        </div>
+      </div>
+      <p class="chart-note">Cada barra representa o total de casos registrados no mês, dividido pela situação atual.</p>
+    </section>
+
+    <section class="panel table-panel" aria-labelledby="titulo-tabela">
+      <div class="panel-heading">
+        <div><h2 id="titulo-tabela">Resultados por empresa</h2><p class="muted">Consolidado do período selecionado</p></div>
+        <span class="count-badge" id="contador-empresas"></span>
+      </div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela de resultados por empresa">
+        <table>
+          <caption class="sr-only">Total de casos, casos abertos e casos fechados por empresa</caption>
+          <thead><tr><th scope="col">Empresa</th><th scope="col">Total de casos</th><th scope="col">Abertos</th><th scope="col">Fechados</th></tr></thead>
+          <tbody id="corpo-tabela"></tbody>
+          <tfoot id="rodape-tabela"></tfoot>
+        </table>
+      </div>
+    </section>
+
+    <footer class="page-footer"><p><span class="footer-dot" aria-hidden="true"></span>Todos os dados deste painel são fictícios.</p><p>Dashboard operacional · Projeto de estudo</p></footer>
+    <noscript><p class="noscript-message">Ative o JavaScript no navegador para visualizar os indicadores e usar o filtro.</p></noscript>
+  </main>
+</body>
+</html>

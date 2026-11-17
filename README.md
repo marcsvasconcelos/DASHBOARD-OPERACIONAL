@@ -1,6 +1,6 @@
 # Dashboard Operacional
 
-Dashboard de indicadores operacionais desenvolvido como primeiro projeto web. A interface é responsiva, está em português brasileiro e utiliza somente HTML, CSS e JavaScript puro.
+Dashboard de indicadores operacionais desenvolvido como projeto web. A interface é responsiva, está em português brasileiro e utiliza somente HTML, CSS e JavaScript puro.
 
 **Acesse o site:** [Dashboard Operacional](https://marcsvasconcelos.github.io/DASHBOARD-OPERACIONAL/)
 
